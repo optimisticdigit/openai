@@ -174,6 +174,7 @@ namespace OpenAI
     public sealed class CreateImageRequest: CreateImageRequestBase
     {
         public string Prompt { get; set; }
+        public string Model { get; set; }
     }
     
     public sealed class CreateImageEditRequest: CreateImageRequestBase
@@ -200,6 +201,8 @@ namespace OpenAI
     {
         public string Url { get; set; }
         public string B64Json { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string revised_prompt { get; set; }
     }
     #endregion
 
